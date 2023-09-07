@@ -1,0 +1,16 @@
+{
+  "name": "MuseumExhibit-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-localstorage": "^2.2.1",
+    "web3": "^1.9.0"
+  },
+  "license": "ISC"
+}

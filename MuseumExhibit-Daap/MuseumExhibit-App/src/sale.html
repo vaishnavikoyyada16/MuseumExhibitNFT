@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>NFT for Museum Exhibits</title>
+    <link rel="stylesheet" href="css/forms.css" >
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav-bar">
+        <a class="name">Museum Exhibit NFT</a>
+        <div class="menu-bar-style">
+        <a class="menu-bar" href="index.html">Home</a>
+        <a class="menu-bar" href="sale.html">Sale</a>
+        <a class="menu-bar" href="ratings.html">Ratings</a>
+        <a class="menu-bar" href="mint.html">Mint</a>
+        <a class="menu-bar" href="view.html">View</a>
+        </div>
+    </div>
+
+        <div class="main-page-sale">
+            <button class="sale-button" id="view-p" href="view_sale.html">Buy</button>
+            <button class="sale-button" id="adds-p">Add</button>
+            <button class="sale-button" id="remove-p">Remove</button>
+            <button class="sale-button" id="update-p">Update</button>
+            <button class="sale-button" id="app-p">Appreciate</button>
+            <button class="sale-button" id="dep-p">Depriciate</button>           
+        </div>
+        
+        <div class="popup" id="adds-form">
+        <div class="popup-content">
+            <button class="closebutton" id="closebutton1"> &times;</button>
+            <table class="center" cellspacing="20 px">
+                <tr>
+                    <td>
+                        <label for="token_id">TokenID:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="token_id" name="tokenid" required size="50" placeholder="Token ID of Museum Exhibit">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="price">Price:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="price" name="price" required size="50" placeholder="Price of Museum Exhibit">
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <button class="buttons" id="add-btn" type="submit">Put on Sale</button>
+        </div>
+        </div>
+        <div class="popup" id="remove-form">
+            <div class="popup-content">
+                <button class="closebutton" id="closebutton2"> &times;</button>
+                <table class="center" cellspacing="20 px">
+                    <tr>
+                        <td>
+                            <label for="token_id">TokenID:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="token_ids" name="tokenid" required size="50" placeholder="Token ID of Museum Exhibit">
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <button class="buttons" id="remove-btn" type="submit">Remove from Sale</button>
+            </div>
+            </div>
+            <div class="popup" id="update-form">
+                <div class="popup-content">
+                <button class="closebutton" id="closebutton3"> &times;</button>
+                    <table class="center" cellspacing="20 px">
+                        <tr>
+                            <td>
+                                <label for="token_id">TokenID:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="token_idss" name="tokenid" required size="50" placeholder="Token ID of Museum Exhibit">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="updatedprice">UpdatedPrice:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="updatedprice" name="price" required size="50" placeholder="Updated Price of Museum Exhibit">
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <br>
+                    <button class="buttons" id="update-btn" type="submit">Update Price</button>
+                </div>
+                </div>
+                <div class="popup" id="app-form">
+                    <div class="popup-content">
+                    <button class="closebutton" id="closebutton4"> &times;</button>
+                        <table class="center" cellspacing="20 px">
+                            <tr>
+                                <td>
+                                    <label for="token_id">TokenID:</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="token_idsss" name="tokenid" required size="50" placeholder="Token ID of Museum Exhibit">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="updatedprice">Appreciation Percentage:</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="percentage" name="percentage" required size="50" placeholder="Percentage of Appreciation">
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <br>
+                        <button class="buttons" id="app-btn" type="submit">Appreciate Price</button>
+                        <div class="popup-contentss" id="display-dd"></div>
+                    </div>
+                    </div>
+                    <div class="popup" id="dep-form">
+                        <div class="popup-content">
+                        <button class="closebutton" id="closebutton5"> &times;</button>
+                            <table class="center" cellspacing="20 px">
+                                <tr>
+                                    <td>
+                                        <label for="token_id">TokenID:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="token_idssss" name="tokenid" required size="50" placeholder="Token ID of Museum Exhibit">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="updatedprice">Depriciation Percentage:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="percentag" name="percentage" required size="50" placeholder="Percentage of Depreciation">
+                                    </td>
+                                </tr>
+                            </table>
+                            <br>
+                            <br>
+                            <button class="buttons" id="dep-btn" type="submit">Depreciate Price</button>
+                            <div class="popup-contentss" id="display-d"></div>
+                        </div>
+                        </div>
+        <script>
+            document.getElementById("adds-p").addEventListener("click", function(){
+                document.querySelector("#adds-form").style.display="flex";
+            })
+            document.getElementById("remove-p").addEventListener("click", function(){
+                document.querySelector("#remove-form").style.display="flex";
+            })
+            document.getElementById("update-p").addEventListener("click", function(){
+                document.querySelector("#update-form").style.display="flex";
+            })
+            document.getElementById("app-p").addEventListener("click", function(){
+                document.querySelector("#app-form").style.display="flex";
+            })
+            document.getElementById("dep-p").addEventListener("click", function(){
+                document.querySelector("#dep-form").style.display="flex";
+            })
+        </script>
+        <script>
+            document.getElementById("closebutton1").addEventListener("click", () => {
+            window.location.href = "sale.html";
+            });
+            document.getElementById("closebutton2").addEventListener("click", () => {
+            window.location.href = "sale.html";
+            });
+            document.getElementById("closebutton3").addEventListener("click", () => {
+            window.location.href = "sale.html";
+            });
+            document.getElementById("closebutton4").addEventListener("click", () => {
+            window.location.href = "sale.html";
+            });
+            document.getElementById("closebutton5").addEventListener("click", () => {
+            window.location.href = "sale.html";
+            });
+            document.getElementById('add-btn').addEventListener("click",function(){
+            event.preventDefault();
+            add_exhibit_to_sale(document.getElementById('token_id').value,document.getElementById('price').value);
+            });
+            document.getElementById('remove-btn').addEventListener("click",function(){
+            event.preventDefault();
+            remove_exhibit_from_sale(document.getElementById('token_ids').value);
+
+            });
+            document.getElementById('update-btn').addEventListener("click",function(){
+            event.preventDefault();
+            update_exhibit_in_sale(document.getElementById('token_idss').value,document.getElementById('updatedprice').value);
+
+            });
+            document.getElementById('app-btn').addEventListener("click",function(){
+            event.preventDefault();
+            appreciate_exhibit(document.getElementById('token_idsss').value,document.getElementById('percentage').value);
+        
+            });
+            document.getElementById('dep-btn').addEventListener("click",function(){
+            event.preventDefault();
+            depreciate_exhibit(document.getElementById('token_idssss').value,document.getElementById('percentag').value);
+            });
+            document.getElementById('view-p').addEventListener("click",function(){
+            event.preventDefault();
+         
+                window.location.href = 'view_sale.html';
+            });
+
+        </script>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script type="text/javascript" src="app.js" ></script>
+</html>

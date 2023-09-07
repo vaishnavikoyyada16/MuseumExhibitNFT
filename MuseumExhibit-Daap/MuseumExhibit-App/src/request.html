@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>NFT for Museum Exhibits</title>
+    <link rel="stylesheet" href="css/forms.css" >
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav-bar">
+        <a class="name">Museum Exhibit NFT</a>
+        <div class="menu-bar-style">
+        <a class="menu-bar" href="index.html">Home</a>
+        <a class="menu-bar" href="sale.html">Sale</a>
+        <a class="menu-bar" href="ratings.html">Ratings</a>
+        <a class="menu-bar" href="mint.html">Mint</a>
+        <a class="menu-bar" href="view.html">View</a>
+        </div>
+    </div>
+        <div class="main-page">
+            <form id="request-form">
+                <h2>Request Minting An Exhibit</h2>
+                <table class="center" cellspacing="20 px">
+                    <tr>
+                        <td>
+                            <label for="yearOfCreation">Year of Creation:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="yearOfCreation" name="yearOfCreation" required size="50" placeholder="Year of creation of Museum Exhibit">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="owner">Owner:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="owner" name="owner" required size="50"placeholder="Owner of Exhibit">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="nameOfExhibit">Name of Exhibit:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="nameOfExhibit" name="nameOfExhibit" size="50" required placeholder="Name of Exhibit">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="history">History:</label>
+                        </td>
+                        <td>
+                            <textarea id="history" name="history" required min-length="50" max-length="50" placeholder="History of Exhibit"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <button class="buttons" id="request-btn" type="submit">Request Minting</button>
+            </form>
+        </div>
+        <script>
+            document.getElementById('request-btn').addEventListener("click",function(){
+                event.preventDefault();
+                setTimeout(function() {
+                    request_minting(document.getElementById('yearOfCreation').value,document.getElementById('owner').value,document.getElementById('nameOfExhibit').value, document.getElementById('history'));
+                }, 2000);
+            });
+        </script>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script type="text/javascript" src="app.js" ></script>
+</html>
+</html>
